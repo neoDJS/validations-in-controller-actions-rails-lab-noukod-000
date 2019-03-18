@@ -66,7 +66,7 @@ RSpec.describe PostsController do
     end
 
     describe "controller actions" do
-      before { patch :update, bad_attributes }
+      before { patch :update, params: bad_attributes }
 
       it "does not update" do
         expect(article_found.content).to_not eq("too short")
