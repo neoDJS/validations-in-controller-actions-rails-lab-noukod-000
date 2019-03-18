@@ -42,7 +42,7 @@ RSpec.describe AuthorsController do
     end
 
     it "renders the form again" do
-      post :create, params: bad_attributes
+      post :create, bad_attributes
       expect(response).to render_template(:new)
     end
   end
