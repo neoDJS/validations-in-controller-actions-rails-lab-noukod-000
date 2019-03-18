@@ -16,7 +16,7 @@ RSpec.describe PostsController do
 
   describe "showing a post" do
     it "shows a post" do
-      get :show, id: @article.id
+      get :show, params: { id: @article.id }
       expect(article_found).to eq(@article)
     end
   end
@@ -36,7 +36,7 @@ RSpec.describe PostsController do
     end
 
     it "redirects to show page" do
-      patch :update, new_attributes
+      patch :update, params: new_attributes
       expect(response).to redirect_to(post_path(@article))
     end
   end
